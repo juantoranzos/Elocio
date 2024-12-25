@@ -1,0 +1,29 @@
+{
+    "productos" : [
+        {
+            "id": 1,
+            "categoria": "papelillos",    
+            "marca": "ocb",
+            "nombreProducto": "OCB Premium",
+            "precio": 1100 ,
+            "img": "/img/ociologo.webp"
+
+        },
+        {
+            "id": 2,
+            "categoria": "papelillos",    
+            "marca": "raw",
+            "nombreProducto": "Raw Premium",
+            "precio": 1800 ,
+            "img": "/img/ociologo.webp"
+
+        }
+    ],
+    "usuarios":[
+        {
+            "id": 1,
+            "email": "papelex@gmail.com",
+            "password": "admin"
+        }
+    ]
+}
