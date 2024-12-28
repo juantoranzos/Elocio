@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const AddProduct = () => {
+export const CrearProducto = () => {
   return (
     <>
     
