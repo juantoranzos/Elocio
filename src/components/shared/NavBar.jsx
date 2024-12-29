@@ -34,7 +34,6 @@ export const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
         {/* Elementos del menú alineados a la derecha */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-            <NavLink end className="nav-item nav-link" to={'/'}>Productos</NavLink>
            
             {
               usuarioLogueado.email ? (
