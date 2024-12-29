@@ -15,7 +15,7 @@ export const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
     navegar('/');
   }
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar variant="dark" expand="lg" style={{ backgroundColor: '#2c2c54' }}>
       <Container>
         {/* Logo alineado a la izquierda */}
         <Navbar.Brand as={Link} to={'/'}>
@@ -39,7 +39,7 @@ export const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
               usuarioLogueado.email ? (
                 <>
                 <NavLink end className="btn btn-danger nav-item nav-link" to={'/admin'}>Administrador</NavLink>
-                <button className='btn btn-dark' onClick={desloguear}>Salir </button>
+                <button className='btn btn-dark ms-2' onClick={desloguear}>Salir </button>
                 </>
               ) :  <NavLink end className="btn btn-danger nav-item nav-link" to={'/login'}>Iniciar Sesión</NavLink>
             }

@@ -46,3 +46,22 @@ export const eliminarProducto = async (id)=>{
         console.log(error)
     }
 }
+export const crearProducto = async (producto)=>{
+    try {
+        const resp = await fetch(urlProductos,{
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(producto)
+        })
+        return resp
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const editarProducto = async ()=>{
+    const resp = await fetch(urlProductos)
+    const productos = await resp.json()
+    return productos
+}

@@ -1,13 +1,49 @@
 {
   "productos": [
     {
-      "id": "2",
-      "categoria": "papelillos",
-      "marca": "ocb",
-      "nombreProducto": "OCB Premium",
-      "precio": 1100,
-      "stock": 10,
-      "img": "/img/ociologo.webp"
+      "id": "b4cf",
+      "categoria": "bebidas",
+      "marca": "Stella Artois",
+      "nombreProducto": "Cerveza Stella Artois 1L",
+      "precio": "3800",
+      "stock": "100",
+      "img": "https://static.wixstatic.com/media/d2b1c5_62629d96d63a4ceaaf92481bb25ef628~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
+    },
+    {
+      "id": "3186",
+      "categoria": "accesorios",
+      "marca": "Raw",
+      "nombreProducto": "Gorra Negra Raw",
+      "precio": "40000",
+      "stock": "1",
+      "img": "https://chillgrowshop.com.ar/wp-content/uploads/2022/02/169515797160668775cdb78660e6940581f1a8791c-600x600.jpg"
+    },
+    {
+      "id": "17eb",
+      "categoria": "tabacos",
+      "marca": "Argento",
+      "nombreProducto": "Tabaco para armar",
+      "precio": "5200",
+      "stock": "10",
+      "img": "https://dcdn.mitiendanube.com/stores/002/963/084/products/argento-x-40g-8d5fcb5a55f16d64f917080637080507-640-0.png"
+    },
+    {
+      "id": "0836",
+      "categoria": "bebidas",
+      "marca": "Corona",
+      "nombreProducto": "Cerveza corona",
+      "precio": "3400",
+      "stock": "14",
+      "img": "https://picadasgourmet.com.ar/wp-content/uploads/2020/09/cerveza-corona.jpg"
+    },
+    {
+      "id": "b218",
+      "categoria": "accesorios",
+      "marca": "Lion Rolling",
+      "nombreProducto": "Pica Lion Rolling ",
+      "precio": "15000",
+      "stock": "2",
+      "img": "https://acdn.mitiendanube.com/stores/001/244/286/products/lion-rolling-circus-picador-3-partes-amsterdam-11-5062b3498c4969773a16905556027858-640-0.jpg"
     }
   ],
   "usuarios": [
