@@ -9,7 +9,7 @@ export const RutasAdmin = () => {
     <Routes >
     <Route exact path="/" element={<AdminPage />} />
     <Route exact path="/crear" element={<CrearProducto />} />
-    <Route exact path="/editar" element={<EditProduct />} />
+    <Route exact path="/editar/:id" element={<EditProduct />} />
     </Routes>
     </>
   )

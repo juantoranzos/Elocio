@@ -36,6 +36,25 @@ export const obtenerProductos = async ()=>{
     console.log(error)
    }
 }
+export const obtenerProducto = async (id) => {
+    try {
+     const resp = await fetch(`${urlProductos}/${id}`)
+     if (!resp.ok) {
+       throw new Error('Error al obtener el producto')
+     }
+     const producto = await resp.json()
+     return {
+       status: resp.status,
+       ...producto
+     }
+    } catch (error) {
+     console.log(error)
+     return {
+       status: 500,
+       error: error.message
+     }
+    }
+ }
 export const eliminarProducto = async (id)=>{
     try {
         const resp = await fetch(`${urlProductos}/${id}`,{

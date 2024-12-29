@@ -51,7 +51,7 @@ export const Products = ({ producto, setProducts }) => {
       <td>{producto.img}</td>
 
       <td>
-        <Link className="btn btn-warning me-2 mb-2" to={'/admin/editar'}>
+        <Link className="btn btn-warning me-2 mb-2" to={`/admin/editar/${producto.id}`}>
           Editar <AiTwotoneEdit />
         </Link>
         <button className="btn btn-danger me-2 mb-2" onClick={borrarProducto}>
