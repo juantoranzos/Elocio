@@ -22,25 +22,52 @@ export const LoginPage = ({setUsuarioLogueado}) => {
   }
   return (
     <>
-      <section className='bg-dark text-white min-vh-100 d-flex flex-column justify-content-center'>
-        <h1 className='text-center'>Admin Panel Ocio</h1>
-        <p className='text-center'>Si no eres administrador <Link to='/'>vuelve a la pagina principal</Link></p>
+     <section className="bg-dark text-white min-vh-100 d-flex flex-column justify-content-center align-items-center px-3">
+  <div className="text-center mb-4">
+    <h1 className="fw-bold">Admin Panel Ocio</h1>
+    <p className="fs-5">
+      Si no eres administrador,{" "}
+      <Link to="/" className="text-warning text-decoration-underline">
+        vuelve a la página principal
+      </Link>
+    </p>
+  </div>
 
+  <form
+    onSubmit={handleSubmit(onSubmit)}
+    className="w-100 d-flex flex-column align-items-center"
+    style={{ maxWidth: "400px" }}
+  >
+    <div className="mb-3 w-100">
+      <input
+        type="email"
+        placeholder="Usuario"
+        className="form-control py-2"
+        {...register("email", { required: "El email es obligatorio" })}
+      />
+      <p className="text-danger text-center mt-2">{errors.email?.message}</p>
+    </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className='d-flex flex-column align-items-center'>
-          <input type="email" placeholder='usuario' className='mb-2 form-control w-25' {
-            ...register('email', {required: 'El email es obligatorio'})
-            
-          }  />
-          <p className='text-danger text-center'>{errors.email?.message}</p>
-          <input type="password" placeholder='constraseña' className='mb-2 form-control w-25'{
-            ...register('password', {required: 'La constraseña es obligatoria'})
-          }  />
-          <p className='text-danger text-center'>{errors.password?.message}</p>
-          <button type="submit" className='btn btn-danger'>Ingresar</button>
-        </form>
+    <div className="mb-3 w-100">
+      <input
+        type="password"
+        placeholder="Contraseña"
+        className="form-control py-2"
+        {...register("password", { required: "La contraseña es obligatoria" })}
+      />
+      <p className="text-danger text-center mt-2">{errors.password?.message}</p>
+    </div>
 
-      </section>
+    <button
+      type="submit"
+      className="btn btn-danger w-100 py-2 fw-bold"
+      style={{ borderRadius: "30px" }}
+    >
+      Ingresar
+    </button>
+  </form>
+</section>
+
     </>
   )
 }

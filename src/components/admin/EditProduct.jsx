@@ -2,43 +2,46 @@ import React from 'react'
 import { Form } from 'react-bootstrap'
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
-import { obtenerProducto } from '../../utils/queris';
-import { useParams } from 'react-router-dom';
+import { editarProducto, obtenerProducto } from '../../utils/queris';
+import { useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export const EditProduct = () => {
-   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
-   const { id } = useParams()
-   
+   const { id } = useParams();
+   const {register, handleSubmit  , formState: { errors }, reset, setValue,} = useForm();
+   const navegacion = useNavigate();
    useEffect(() => {
-    const cargarProducto = async () => {
-      try {
-        const respuesta = await obtenerProducto(id)
-        console.log('Respuesta completa:', respuesta) // Para debugging
-        
-        if (respuesta && respuesta.status === 200) {
-          // Asumiendo que los nombres de las propiedades coinciden exactamente
-          Object.keys(respuesta).forEach(key => {
-            if (key !== 'status') {
-              setValue(key, respuesta[key])
-            }
-          })
-        } else {
-          console.error('Error al cargar el producto:', respuesta)
-        }
-      } catch (error) {
-        console.error('Error al cargar el producto:', error)
+     obtenerProducto(id).then((respuesta)=>{
+      setValue('categoria', respuesta.categoria);
+      setValue('marca', respuesta.marca);
+      setValue('nombreProducto', respuesta.nombreProducto);
+      setValue('stock', respuesta.stock);
+      setValue('precio', respuesta.precio);
+      setValue("img", respuesta.img);
+
+     })
+   }, [])
+
+   const onSubmit = (productoEditado) => {
+    editarProducto(productoEditado, id).then((respuesta) => {
+      if (respuesta && respuesta.status === 200) {
+        Swal.fire({
+          title: "Producto editado",
+          text: `El producto: ${productoEditado.nombreProducto} ha sido editado con exito`,
+          icon: "success",
+        });
+        navegacion('/admin');
+
+
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: `El producto ${productoEditado.nombreProducto} no pudo ser editado`,
+          icon: "error",
+        });
       }
-    }
-
-    if (id) {
-      cargarProducto()
-    }
-   }, [id, setValue])
-   
-  const onSubmit = (productoSeleccionado) => {
-    console.log('Datos del formulario:', productoSeleccionado)
-  }
-
+    })
+   }
   return (
     <div className='container p-4'>
       <h2 className='text-center mb-4 fw-bold text-success'>Editar Producto</h2>
@@ -75,13 +78,17 @@ export const EditProduct = () => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Precio</Form.Label>
-          <Form.Control 
-            type='number' 
-            {...register('precio', { required: "El precio es obligatorio" })}
-          />
-          {errors.precio && <p className="text-danger">{errors.precio.message}</p>}
-        </Form.Group>
+  <Form.Label>Precio</Form.Label>
+  <Form.Control 
+    type="number" 
+    {...register("precio", { 
+      required: "El precio es obligatorio",
+      min: { value: 100, message: "El precio debe ser al menos 100" }
+    })}
+  />
+  {errors.precio && <p className="text-danger">{errors.precio.message}</p>}
+</Form.Group>
+
 
         <Form.Group className="mb-3">
           <Form.Label>Stock</Form.Label>
@@ -93,10 +100,10 @@ export const EditProduct = () => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Imagen</Form.Label>
+          <Form.Label>Imagen URL</Form.Label>
           <Form.Control 
             type='text' 
-            {...register('imagen', { required: "La imagen es obligatoria" })}
+            {...register('img', { required: "La imagen es obligatoria" })}
           />
           {errors.imagen && <p className="text-danger">{errors.imagen.message}</p>}
         </Form.Group>

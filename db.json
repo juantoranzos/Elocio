@@ -1,13 +1,13 @@
 {
   "productos": [
     {
-      "id": "b4cf",
       "categoria": "bebidas",
       "marca": "Stella Artois",
       "nombreProducto": "Cerveza Stella Artois 1L",
-      "precio": "3800",
+      "precio": "3700",
       "stock": "100",
-      "img": "https://static.wixstatic.com/media/d2b1c5_62629d96d63a4ceaaf92481bb25ef628~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
+      "img": "https://static.wixstatic.com/media/d2b1c5_62629d96d63a4ceaaf92481bb25ef628~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "id": "b4cf"
     },
     {
       "id": "3186",
@@ -19,13 +19,13 @@
       "img": "https://chillgrowshop.com.ar/wp-content/uploads/2022/02/169515797160668775cdb78660e6940581f1a8791c-600x600.jpg"
     },
     {
-      "id": "17eb",
       "categoria": "tabacos",
       "marca": "Argento",
       "nombreProducto": "Tabaco para armar",
-      "precio": "5200",
+      "precio": "5500",
       "stock": "10",
-      "img": "https://dcdn.mitiendanube.com/stores/002/963/084/products/argento-x-40g-8d5fcb5a55f16d64f917080637080507-640-0.png"
+      "img": "https://dcdn.mitiendanube.com/stores/002/963/084/products/argento-x-40g-8d5fcb5a55f16d64f917080637080507-640-0.png",
+      "id": "17eb"
     },
     {
       "id": "0836",
@@ -37,13 +37,22 @@
       "img": "https://picadasgourmet.com.ar/wp-content/uploads/2020/09/cerveza-corona.jpg"
     },
     {
-      "id": "b218",
+      "id": "7070",
       "categoria": "accesorios",
-      "marca": "Lion Rolling",
-      "nombreProducto": "Pica Lion Rolling ",
-      "precio": "15000",
-      "stock": "2",
-      "img": "https://acdn.mitiendanube.com/stores/001/244/286/products/lion-rolling-circus-picador-3-partes-amsterdam-11-5062b3498c4969773a16905556027858-640-0.jpg"
+      "marca": "Lion Rolling Circus",
+      "nombreProducto": "Armador de tabaco",
+      "precio": "8500",
+      "stock": "3",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_889299-MLA52695122653_122022-O.webp"
+    },
+    {
+      "id": "f219",
+      "categoria": "bebidas",
+      "marca": "Patagonia",
+      "nombreProducto": "Cerveza Patagonia Bohemian",
+      "precio": "7500",
+      "stock": "10",
+      "img": "https://dcdn.mitiendanube.com/stores/001/651/135/products/patagonia-bohemian1-564228b9c221b0c03216233360527721-480-0.png"
     }
   ],
   "usuarios": [

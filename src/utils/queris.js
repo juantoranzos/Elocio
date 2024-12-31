@@ -39,14 +39,8 @@ export const obtenerProductos = async ()=>{
 export const obtenerProducto = async (id) => {
     try {
      const resp = await fetch(`${urlProductos}/${id}`)
-     if (!resp.ok) {
-       throw new Error('Error al obtener el producto')
-     }
-     const producto = await resp.json()
-     return {
-       status: resp.status,
-       ...producto
-     }
+     const productoEditar = await resp.json()
+     return productoEditar
     } catch (error) {
      console.log(error)
      return {
@@ -79,8 +73,17 @@ export const crearProducto = async (producto)=>{
         console.log(error)
     }
 }
-export const editarProducto = async ()=>{
-    const resp = await fetch(urlProductos)
-    const productos = await resp.json()
-    return productos
+export const editarProducto = async (producto , id)=>{
+  try {
+    const resp = await fetch(urlProductos + '/' + id, {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(producto)
+    })
+    return resp
+  } catch (error) {
+    console.log(error)
+  }
 }

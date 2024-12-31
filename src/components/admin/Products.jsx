@@ -1,9 +1,9 @@
-import React from 'react';
-import { AiFillDelete } from 'react-icons/ai';
+import React from "react";
+import { AiFillDelete } from "react-icons/ai";
 import { AiTwotoneEdit } from "react-icons/ai";
-import { Link } from 'react-router-dom';
-import { eliminarProducto, obtenerProductos } from '../../utils/queris';
-import Swal from 'sweetalert2';
+import { Link } from "react-router-dom";
+import { eliminarProducto, obtenerProductos } from "../../utils/queris";
+import Swal from "sweetalert2";
 
 export const Products = ({ producto, setProducts }) => {
   const borrarProducto = () => {
@@ -48,8 +48,16 @@ export const Products = ({ producto, setProducts }) => {
       <td>{producto.nombreProducto}</td>
       <td>{producto.precio}</td>
       <td>{producto.stock}</td>
-      <td>{producto.img}</td>
-
+      <td>
+        <a
+          href={producto.img}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={producto.img} // Mostrar URL completa al pasar el cursor
+        >
+          {producto.img.length > 30 ? `${producto.img.slice(0, 30)}...` : producto.img}
+        </a>
+      </td>
       <td>
         <Link className="btn btn-warning me-2 mb-2" to={`/admin/editar/${producto.id}`}>
           Editar <AiTwotoneEdit />
