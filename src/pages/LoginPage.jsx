@@ -61,7 +61,7 @@ export const LoginPage = ({setUsuarioLogueado}) => {
     <button
       type="submit"
       className="btn btn-danger w-100 py-2 fw-bold"
-      style={{ borderRadius: "30px" }}
+      style={{ borderRadius: "10px" }}
     >
       Ingresar
     </button>
