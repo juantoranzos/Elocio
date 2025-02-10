@@ -17,7 +17,7 @@ export const ProductCard = () => {
 
   const titulo = categoriaSeleccionada === 'todos'
     ? 'Todos los productos'
-    : `Productos de ${categoriaSeleccionada}`;
+    : `${categoriaSeleccionada}`;
 
   return (
     <div className="container my-4" id='productos'>
