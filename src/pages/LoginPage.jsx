@@ -8,7 +8,7 @@ export const LoginPage = ({setUsuarioLogueado}) => {
   const navigate = useNavigate();
   const onSubmit =(usuario)=>{
     login(usuario).then((respuesta)=>{
-      if(respuesta){
+      if(respuesta.status === 200){
         //loguear al usuario
         sessionStorage.setItem('usuario', JSON.stringify(respuesta))
         setUsuarioLogueado(respuesta)

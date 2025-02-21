@@ -36,7 +36,7 @@ export const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
           <Nav className="ms-auto align-items-center">
            
             {
-              usuarioLogueado.email ? (
+              usuarioLogueado.uid ? (
                 <>
                 <NavLink end className="btn btn-danger nav-item nav-link" to={'/admin'}>Administrador</NavLink>
                 <button className='btn btn-dark ms-2' onClick={desloguear}>Salir </button>

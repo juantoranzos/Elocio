@@ -18,7 +18,7 @@ export const Products = ({ producto, setProducts }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        eliminarProducto(producto.id).then((respuesta) => {
+        eliminarProducto(producto._id).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire({
               title: "Eliminado",
@@ -42,7 +42,7 @@ export const Products = ({ producto, setProducts }) => {
 
   return (
     <tr>
-      <td>{producto.id}</td>
+      <td>{producto._id}</td>
       <td>{producto.categoria}</td>
       <td>{producto.marca}</td>
       <td>{producto.nombreProducto}</td>
@@ -59,7 +59,7 @@ export const Products = ({ producto, setProducts }) => {
         </a>
       </td>
       <td>
-        <Link className="btn btn-warning me-2 mb-2" to={`/admin/editar/${producto.id}`}>
+        <Link className="btn btn-warning me-2 mb-2" to={`/admin/editar/${producto._id}`}>
           Editar <AiTwotoneEdit />
         </Link>
         <button className="btn btn-danger me-2 mb-2" onClick={borrarProducto}>
