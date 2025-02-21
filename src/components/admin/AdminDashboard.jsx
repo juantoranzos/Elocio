@@ -36,7 +36,7 @@ export const AdminDashboard = () => {
           </thead>
         <tbody>
           {
-            products.map(producto =>  <Products key={producto.id} producto={producto} setProducts={setProducts} />)
+            products.map(producto =>  <Products key={producto._id} producto={producto} setProducts={setProducts} />)
           }
           
         </tbody>

@@ -72,7 +72,7 @@ export const Hero = () => {
             textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
           }}
         >
-          📍 San Pedro de Jujuy
+          📍Aristobulo del Valle 273, San Pedro de Jujuy
         </h3>
 
         {/* Botón con efecto hover y sombra */}
