@@ -37,8 +37,6 @@ export const Hero = () => {
       <Container
         className="text-center position-relative"
         style={{ zIndex: 2 }}
-        data-aos="fade-up"
-        data-aos-duration="1350"
       >
         {/* Título principal */}
         <h1
@@ -47,6 +45,8 @@ export const Hero = () => {
             fontFamily: "'Playfair Display', serif",
             textShadow: '2px 2px 8px rgba(0, 0, 0, 0.6)',
           }}
+           data-aos="zoom-in"
+           data-aos-duration="1000"
         >
           El Ocio
         </h1>
@@ -60,6 +60,8 @@ export const Hero = () => {
             fontWeight: 300,
             textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
           }}
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           Tu tabaqueria y bodega de confianza.
         </h2>
@@ -71,6 +73,8 @@ export const Hero = () => {
             fontFamily: "'Raleway', sans-serif",
             textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
           }}
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           📍Aristobulo del Valle 273, San Pedro de Jujuy
         </h3>
@@ -91,6 +95,7 @@ export const Hero = () => {
           }}
           className="hover-scale"
           onClick={scrollToProducts}
+          data-aos="zoom-in"
         >
           Ver Productos 👽
         </Button>
