@@ -24,7 +24,7 @@ export const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
             alt="Logo"
             width="50"
             height="50"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top rounded-circle"
           />
         </Navbar.Brand>
 
