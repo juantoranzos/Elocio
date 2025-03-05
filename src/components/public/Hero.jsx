@@ -1,15 +1,16 @@
-import React from 'react';
-import { Button, Container } from 'react-bootstrap';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import fondo1 from '../../assets/img/fondo1.webp';
+import React from "react";
+import { Button, Container } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import fondo1 from "../../assets/img/fondo1.webp";
+import TextPressure from "../../animations/TextPressure";
 
 export const Hero = () => {
   AOS.init();
   const scrollToProducts = () => {
-    const productosSection = document.getElementById('productos');
+    const productosSection = document.getElementById("productos");
     if (productosSection) {
-      productosSection.scrollIntoView({ behavior: 'smooth' }); // Scroll suave
+      productosSection.scrollIntoView({ behavior: "smooth" }); // Scroll suave
     }
   };
   return (
@@ -17,18 +18,19 @@ export const Hero = () => {
       className="position-relative d-flex align-items-center justify-content-center"
       style={{
         backgroundImage: `url(${fondo1})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        minHeight: '100vh', // Ocupa toda la altura de la pantalla
-        color: 'white',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh", // Ocupa toda la altura de la pantalla
+        color: "white",
       }}
     >
       {/* Overlay oscuro con gradiente */}
       <div
         style={{
-          position: 'absolute',
-          inset: '0',
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4))',
+          position: "absolute",
+          inset: "0",
+          background:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4))",
           zIndex: 1,
         }}
       ></div>
@@ -39,26 +41,38 @@ export const Hero = () => {
         style={{ zIndex: 2 }}
       >
         {/* Título principal */}
-        <h1
-          className="display-2 fw-bold mb-4 titulo"
+        <div
           style={{
-            fontFamily: "'Playfair Display', serif",
-            textShadow: '2px 2px 8px rgba(0, 0, 0, 0.6)',
+            position: "relative",
+            height: "130px",
+            width: "350px",
+            margin: "0 auto",
           }}
-           data-aos="zoom-in"
-           data-aos-duration="1000"
+          data-aos="fade-up"
         >
-          El Ocio
-        </h1>
+          <TextPressure
+            as="h1"
+            text="EL OCIO"
+            flex={true}
+            alpha={false}
+            stroke={false}
+            width={true}
+            weight={true}
+            italic={true}
+            textColor="#ffffff"
+            strokeColor="#ff0000"
+            minFontSize={36}
+          />
+        </div>
 
         {/* Subtítulo */}
         <h2
           className="lead mb-4 mx-auto fs-4"
           style={{
-            maxWidth: '600px',
+            maxWidth: "600px",
             fontFamily: "'Raleway', sans-serif",
             fontWeight: 300,
-            textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
+            textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
           }}
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -71,7 +85,7 @@ export const Hero = () => {
           className="mb-4 fw-bold mx-auto fs-5"
           style={{
             fontFamily: "'Raleway', sans-serif",
-            textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
+            textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
           }}
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -83,15 +97,15 @@ export const Hero = () => {
         <Button
           size="lg"
           style={{
-            backgroundColor: '#FFC107',
-            color: '#3C2A21',
-            border: 'none',
-            padding: '12px 30px',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            borderRadius: '50px',
-            boxShadow: '0 4px 15px rgba(255, 193, 7, 0.4)',
-            transition: 'all 0.3s ease',
+            backgroundColor: "#FFC107",
+            color: "#3C2A21",
+            border: "none",
+            padding: "12px 30px",
+            fontSize: "1.1rem",
+            fontWeight: "600",
+            borderRadius: "50px",
+            boxShadow: "0 4px 15px rgba(255, 193, 7, 0.4)",
+            transition: "all 0.3s ease",
           }}
           className="hover-scale"
           onClick={scrollToProducts}
