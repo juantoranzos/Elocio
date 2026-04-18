@@ -13,8 +13,14 @@ export const ProductCard = () => {
   // Obtener productos desde el backend usando la variable de entorno
   useEffect(() => {
     axios.get(import.meta.env.VITE_API_PRODUCTOS)
-      .then(response => setProductos(response.data))
-      .catch(error => console.error('Error al obtener productos:', error));
+      .then(response => {
+        const data = Array.isArray(response.data) ? response.data : [];
+        setProductos(data);
+      })
+      .catch(error => {
+        console.error('Error al obtener productos:', error);
+        setProductos([]); // Asegurarse de que productos sea un array vacío en caso de error
+      });
   }, []);
 
   // Obtener categorías únicas

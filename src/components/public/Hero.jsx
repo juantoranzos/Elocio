@@ -90,7 +90,7 @@ export const Hero = () => {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          📍Aristobulo del Valle 273, San Pedro de Jujuy
+          📍Gobernador Tello 525, San Pedro de Jujuy
         </h3>
 
         {/* Botón con efecto hover y sombra */}
